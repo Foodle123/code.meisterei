@@ -69,13 +69,13 @@
 		<div class="navbar-chulapa-fab-background">&nbsp;</div>
 		<nav class="navbar-chulapa-fab-nav" aria-label="alternative-navigation">
 			<ul class="navbar-nav text-center text-uppercase font-weight-light mt-0 mb-1 py-1">
-				<li class="nav-item">
-					<a class="nav-link px-3 navbar-brand mx-1 " href="{{ site.navbar.brand.url | default: "" | absolute_url }}">
+				<li class="nav-item mx-auto">
+				  <a class="nav-link px-3 navbar-brand d-flex align-items-center" href="{{ site.navbar.brand.url | default: "" | absolute_url }}">
 					{%- if site.navbar.brand.img -%}
-					<img src="{{- site.navbar.brand.img | absolute_url -}}" width="30" height="30" class="d-inline-block align-top rounded-lg text-center mr-1" alt="NavbarLogo">
+					  <img src="{{ site.navbar.brand.img | absolute_url }}" width="30" height="30" class="rounded-lg mr-2" alt="NavbarLogo">
 					{%- endif -%}
-					{{- site.navbar.brand.title -}}
-					</a>
+					<span>{{ site.navbar.brand.title }}</span>
+				  </a>
 				</li>
 				{%- for item in site.navbar.nav -%}
 					{%- if item.child[0] -%}
@@ -112,10 +112,12 @@
 	
 	<nav class="navbar navbar-expand sticky-top navbar-chulapa d-none d-{{- disp -}}-block " aria-label="primary-navigation">
 	<div class="container-fluid mx-md-2">
-			<a class="navbar-brand text-uppercase font-weight-light" href="{{ site.navbar.brand.url | default: "/" | absolute_url }}">
-			{%- if site.navbar.brand.img -%}
-				<img src="{{ site.navbar.brand.img | absolute_url }}" width="30" height="30" class="d-inline-block align-top rounded-lg mr-1" alt="NavbarLogo">
-			{%- endif -%}{{- site.navbar.brand.title -}}</a>
+			<a class="navbar-brand d-flex align-items-center text-uppercase font-weight-light" href="{{ site.navbar.brand.url | default: '/' | absolute_url }}">
+			  {%- if site.navbar.brand.img -%}
+				<img src="{{ site.navbar.brand.img | absolute_url }}" width="30" height="30" class="rounded-lg mr-2" alt="NavbarLogo">
+			  {%- endif -%}
+			  <span class="align-middle">{{- site.navbar.brand.title -}}</span>
+			</a>
 			{%- if site.navbar.nav -%}
 				<ul class="navbar-nav ml-auto">
 				{%- for item in site.navbar.nav -%}
