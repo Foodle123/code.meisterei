@@ -1,4 +1,6 @@
-remote_theme: dieghernan/chulapa
+#remote_theme: dieghernan/chulapa
+maintenance_mode: true
+theme: null
 
 # Find errors on this file with http://www.yamllint.com/
 
@@ -7,21 +9,21 @@ remote_theme: dieghernan/chulapa
 # A. Site Settings /SEO options
 # Overall options for your site, would affect your site SEO
 # Default values are explained
-locale                  :     #default["en-US"] format language-TERRITORY , e.g fr, en-GB, es-MX, pt-BR
-title                   : Chulapa 101    #default["repository_name"]
-title_separator         :     #default [" | "]
-subtitle                : Chulapa Jekyll Theme starter pack    #default [your-repository-tagline]  
-description             : Chulapa Jekyll Theme starter pack #default [your-repository-tagline]
+locale                  : "de-DE"    #default["en-US"] format language-TERRITORY , e.g fr, en-GB, es-MX, pt-BR
+title                   : code.meisterei    #default["repository_name"]
+title_separator         : " - "    #default [" | "]
+subtitle                : Professionelle IT-Dienstleistungen für Ihr Unternehmen    #default [your-repository-tagline]  
+description             : code.meisterei steht für datengestützte IT-Lösungen, die den Geschäftserfolg unserer Kunden nachhaltig fördern. Von der Konzeption und Umsetzung von Data-Warehouse-Architekturen bis hin zur Automatisierung von Berichtsprozessen – wir bieten durchdachte Strategien für eine datenbasierte Zukunft. #default [your-repository-tagline]
 url                     :     #See baseurl - On Github Pages you may leave it blank - If you use CNAME use your domain
 baseurl                 :     #On Github Pages you may leave it blank. Have a look to: https://byparker.com/blog/2014/clearing-up-confusion-around-baseurl/
-words_per_minute        :     #default[200]
-timezone                :     #"Europe/Madrid ,see https://jekyllrb.com/docs/configuration/options/ and https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+words_per_minute        : 250    #default[200]
+timezone                : "Europe/Berlin"    #"Europe/Madrid ,see https://jekyllrb.com/docs/configuration/options/ and https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # SEO
 og_image                :     #default[author.avatar (see below)] or [github-avatar]
 twitter_site            :     #Avoid @
 author:
-  name                  :  Your Name   # Name Surname Company
+  name                  :  Cedric Ziemann   # Name Surname Company
   avatar                :     # Try a square file. Info: Your github avatar on https://github.com/[USERNAME].png
   location              :  "Madrid, Spain"   # New York, USA 
 #  links:                
@@ -90,31 +92,27 @@ comments:
 #   "brand" options would be set on the left side of your navbar
 #   "nav" would be set on the right side. Two-level nav links available
 navbar:
-  style     :  #default is the classical top navbar, set "fab" for a floating action button navbar or "dual"
+  style     : dual #default is the classical top navbar, set "fab" for a floating action button navbar or "dual"
   expand    :  # At which device size expand the navbar menu. default[md] https://getbootstrap.com/docs/4.5/layout/overview/
   brand:
-    title   :  Home # Title in navbar
-    url     :  # default["url/baseurl"]
-    img     :  # An small image, try 30x30px
+    title   : code.meisterei # Title in navbar
+    url     : / # default["url/baseurl"]
+    img     : /assets/images/logo.png # An small image, try 30x30px
   nav:
-  - title   : Blog # Label
-    url     : /blog/ # url	
-  - title   : Cheatsheets
-    url     : /cheatsheets
-  - title   : Extras
+  - title   : Über uns # Label
+    url     : /ueber_uns # url	
+  - title   : Leistungen
     child   :
-      - title : Tags
-        url   : /tags
-      - title : Categories
-        url   : /categories
-      - title : Archive
-        url   : /archive
-      - title : Current skin
-        url   : /current-skin
-  - title   : Docs
-    url     : https://dieghernan.github.io/chulapa/docs/01-install
-  - title   : Use this template
-    url     : https://github.com/dieghernan/chulapa-101/generate
+      - title : Leistung1
+        url   : /leistung1
+      - title : Leistung2
+        url   : /Leistung2
+      - title : Leistung3
+        url   : /Leistung3
+      - title : Leistung4
+        url   : /Leistung4
+  - title   : Kontakt
+    url     : /kontakt
 #  - title   : # Label submenu
 #    child:		
 #    - title: # Child label		
@@ -124,12 +122,12 @@ navbar:
 #Social links to be placed on your site footer
 footer:
   links:
-    - label : Repo on Github # Label
-      icon  : fab fa-github # Fontawesome 5 icon
-      url   : https://github.com/dieghernan/chulapa-101 # A link or email: https://twitter.com/jack, mail@example.com
-    - label: "RSS"
-      icon: "fa fa-rss"
-      url:  "./atom.xml"
+    - label: "Impressum"
+      url:  "/impressum"
+    - label: "Datenschutz"
+      url:  "/datenschutz"
+    - label: "Blog"
+      url:  "/blog"
   copyright: # default is © <year> <name> 
   
 # C. Theme Settings
@@ -140,10 +138,10 @@ googlefonts:
 # Theme and colors
 chulapa-skin: 
   highlight     :  # default["default"]
-  skin         :  # Optional predefined skins
-  autothemer    :  true # Bool: Use autotheming
+  skin         : lux # Optional predefined skins
+  autothemer    :   # true Bool: Use autotheming
   vars          :    
-    primary     : "#ffbe98" #default ["#007bff"] - Bootstrap blue
+    primary     : "#fbbc09" #default ["#007bff"] - Bootstrap blue #ffbe98
     
 # D. Jekyll Defaults and collections: see https://jekyllrb.com/
 
@@ -227,6 +225,7 @@ exclude:
   - README.md
   - Gemfile
   - vendor
+  - _site
 
 include:
  - _pages
